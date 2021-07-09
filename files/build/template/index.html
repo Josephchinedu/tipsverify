@@ -1,0 +1,431 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+verifytips
+{% endblock title %}
+
+{% block content %}
+<main class="main" id="top">
+  {% include 'partials/navbar.html' %}
+  <section class="py-0" id="header">
+    <div class="bg-holder d-none d-md-block" style="background-image:url('{% static 'photo-1610.jpeg' %}');background-position:right top;background-size:contain;"></div>
+    <!--/.bg-holder-->
+    <div class="bg-holder d-md-none" style="background-image:url('{% static 'assets/img/illustrations/hero-bg.png' %}'); background-position:right top;background-size:contain;"></div>
+    <!--/.bg-holder-->
+    <div class="container">
+      <div class="row align-items-center min-vh-75 min-vh-lg-100">
+        <div class="col-md-7 col-lg-6 col-xxl-5 py-6 text-sm-start text-center">
+          <h1 class="mt-6 mb-sm-4 fw-semi-bold lh-sm fs-4 fs-lg-5 fs-xl-6">THE BEST FREE FOOTBALL <br class="d-block d-lg-block" />PREDICTION SITE IN THE WORLD</h1>
+          <a class="btn btn-lg btn-success" href="#" role="button">Login Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<!--  ##################################3   Free predictions ###################################### -->
+<section class="py-5" id="">
+  <div class="bg-holder d-none d-sm-block" style="background-image:url('{% static 'assets/llustrations/bg.png' %}');background-position:top left;background-size:225px 755px;margin-top:-17.5rem;"></div>
+  <!--/.bg-holder-->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-9 mx-auto text-left mb-3">
+        <h6 class="fw-bold fs-3 fs-lg-5 lh-sm mb-3">Free tips</h6>
+       
+      </div>
+    </div>
+    <div class="row flex-center h-100">
+      <div class="col-xl-12">
+        <div class="table-responsive">
+          <table class="table">
+            <style>
+              tr th{
+                background: #66BB6A !important;
+                color: #fff;
+                
+              }
+            </style>
+            <thead>
+              <tr>
+                <th scope="col">Match</th>
+                <th scope="col">League</th>
+                <th scope="col">1</th>
+                <th scope="col">x</th>
+                <th scope="col">2</th>
+                <th scope="col">1x</th>
+                <th scope="col">x2</th>
+                <th scope="col">12</th>
+                <th scope="col">prediction</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% if data %}
+                {% for datas in data %}
+                  <tr>
+                    <td>{{ datas.home_team }} vs {{ datas.away_team }}</td>
+                    <td>{{ datas.competition_cluster }}</td>
+                    <!--#############3 Odds ##########3-->
+                    
+                    <td>{{ datas.odds.1 }}</td>
+                    <td>{{ datas.odds.X }}</td>
+                    <td>{{ datas.odds.2 }}</td>
+                    <td>{{ datas.odds.1X }}</td>
+                    <td>{{ datas.odds.X2 }}</td>
+                    <td>{{ datas.odds.12 }}</td>
+                    <td>{{ datas.prediction }}</td>
+                   
+                  </tr>
+                {% endfor %}
+              {% else %}
+                  <h5>No data</h5>
+              {% endif %}
+              
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ############################ Why choose us ##############################33333-->
+<section class="py-0">
+  <div class="bg-holder" style="background-image:url('{% static 'assets/img/illustrations/how-it-works.png' %}');background-position:center bottom;background-size:cover;"></div>
+  <!--/.bg-holder-->
+  <div class="container-lg">
+    <div class="row justify-content-center">
+      <div class="col-sm-8 col-md-9 col-xl-5 text-center pt-8">
+        <h5 class="fw-bold fs-3 fs-xxl-5 lh-sm mb-3 text-white">Why choose us</h5>
+      </div>
+      <div class="col-sm-9 col-md-12 col-xxl-9">
+        <div class="theme-tab">
+          <ul class="nav justify-content-between">
+            <li class="nav-item" role="presentation"><a class="nav-link active fw-semi-bold" href="#bootstrap-tab1" data-bs-toggle="tab" data-bs-target="#tab1" id="tab-1"><span class="nav-item-circle-parent"><span class="nav-item-circle">01</span></span></a></li>
+            <li class="nav-item" role="presentation"><a class="nav-link fw-semi-bold" href="#bootstrap-tab2" data-bs-toggle="tab" data-bs-target="#tab2" id="tab-2"><span class="nav-item-circle-parent"><span class="nav-item-circle">02</span></span></a></li>
+            <li class="nav-item" role="presentation"><a class="nav-link fw-semi-bold" href="#bootstrap-tab3" data-bs-toggle="tab" data-bs-target="#tab3" id="tab-3"><span class="nav-item-circle-parent"><span class="nav-item-circle">03</span></span></a></li>
+            <li class="nav-item" role="presentation"><a class="nav-link fw-semi-bold" href="#bootstrap-tab4" data-bs-toggle="tab" data-bs-target="#tab4" id="tab-4"><span class="nav-item-circle-parent"><span class="nav-item-circle">04</span></span></a></li>
+          </ul>
+          <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab-1">
+              <div class="row align-items-center my-6 mx-auto">
+                <div class="col-md-6 col-lg-5 offset-md-1">
+                  <h3 class="fw-bold lh-base text-white">High Bet Accuracy</h3>
+                </div>
+                <div class="col-md-5 text-white offset-lg-1">
+                  <p class="mb-0">We deliver over 89.9% Prediction accuracy on a daily basis</p>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab-2">
+              <div class="row align-items-center my-6 mx-auto">
+                <div class="col-md-6 col-lg-5 offset-md-1">
+                  <h3 class="fw-bold lh-base text-white">Multiple Bet Markets</h3>
+                </div>
+                <div class="col-md-5 text-white offset-lg-1">
+                  <p class="mb-0">We analyze and provide tips for a wide range of markets eg HT/FT, over 2.5 goals, bts, etc.</p>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab-3">
+              <div class="row align-items-center my-6 mx-auto">
+                <div class="col-md-6 col-lg-5 offset-md-1">
+                  <h3 class="fw-bold lh-base text-white">Risk Management                  </h3>
+                </div>
+                <div class="col-md-5 text-white offset-lg-1">
+                  <p class="mb-0">Our team of betting experts analyse each game, the teams involved as wells as players, and their contributions, this means we are able to provide the most accurate football tips for you.</p>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="tab4" role="tabpanel" aria-labelledby="tab-4">
+              <div class="row align-items-center my-6 mx-auto">
+                <div class="col-md-6 col-lg-5 offset-md-1">
+                  <h3 class="fw-bold lh-base text-white">Experience Great Support</h3>
+                </div>
+                <div class="col-md-5 text-white offset-lg-1">
+                  <p class="mb-0">We are always here to serve you better. Have any issues or information you'll like immediate assitance with? Feel Free Contact us today.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+  <section class="py-5" id="Services">
+    <div class="bg-holder d-none d-sm-block" style="background-image:url('{% static 'assets/llustrations/bg.png' %}');background-position:top left;background-size:225px 755px;margin-top:-17.5rem;"></div>
+    <!--/.bg-holder-->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-9 mx-auto text-center mb-3">
+          <h5 class="fw-bold fs-3 fs-lg-5 lh-sm mb-3">What Services we offer to our subscribers</h5>
+        </div>
+      </div>
+      <div class="row flex-center h-100">
+        <div class="col-xl-12">
+          <div class="row">
+            <div class="col-md-3 mb-5">
+              <div class="card h-100 shadow px-4 px-md-2 px-lg-3 card-span pt-6">
+                <div class="text-center text-md-start card-hover"><img class="ps-3 icons" src="{% static 'soccer-ball.png' %}" height="40" alt="" />
+                  <div class="card-body">
+                    <h6 class="fw-bold fs-1 heading-color">verify 2 odds</h6>
+                    <p class="mt-3 mb-md-0 mb-lg-2">Enjoy accurate tips of football matches that accumulate up to 2.00 odds everyday.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 mb-5">
+              <div class="card h-100 shadow px-4 px-md-2 px-lg-3 card-span pt-6">
+                <div class="text-center text-md-start card-hover"><img class="ps-3 icons" src="{% static 'soccer-ball.png' %}" height="40" alt="" />
+                  <div class="card-body">
+                    <h6 class="fw-bold fs-1 heading-color">verify 5 odds</h6>
+                    <p class="mt-3 mb-md-0 mb-lg-2">Enjoy accurate tips of football matches that accumulate up to 5.00 odds everyday.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 mb-5">
+              <div class="card h-100 shadow px-4 px-md-2 px-lg-3 card-span pt-6">
+                <div class="text-center text-md-start card-hover"><img class="ps-3 icons" src="{% static 'soccer-ball.png' %}" height="40" alt="" />
+                  <div class="card-body">
+                    <h6 class="fw-bold fs-1 heading-color">verify 10 odds</h6>
+                    <p class="mt-3 mb-md-0 mb-lg-2">Enjoy accurate tips of football matches that accumulate up to 10.00 odds everyday.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 mb-5">
+              <div class="card h-100 shadow px-4 px-md-2 px-lg-3 card-span pt-6">
+                <div class="text-center text-md-start card-hover"><img class="ps-3 icons" src="{% static 'soccer-ball.png' %}" height="40" alt="" />
+                  <div class="card-body">
+                    <h6 class="fw-bold fs-1 heading-color">Platinum</h6>
+                    <p class="mt-3 mb-md-0 mb-lg-2">Enjoy accurate tips of football matches that accumulate up to 50 odds every weekend.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================-->
+  <!-- <section> begin ============================-->
+  <section class="py-5" id="invest">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-xl-9 mb-3">
+          <div class="row">
+            <div class="col-lg-12 mb-3">
+              <h5 class="fw-bold fs-3 fs-lg-5 lh-sm mb-3">Upcoming Events Predictions  </h5>
+              
+            </div>
+            <div class="col-md-12 mb-5">
+              <div class="table-responsive">
+                <table class="table">
+                  <style>
+                    tr th{
+                      background: #66BB6A !important;
+                      color: #fff;
+                      
+                    }
+                  </style>
+                  <thead>
+                    <tr>
+                      <th scope="col">Event</th>
+                      <th scope="col">1</th>
+                      <th scope="col">X</th>
+                      <th scope="col">2</th>
+                      <th scope="col">Score</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% if data %}
+                      {% for datas in data %}
+                        <tr>
+                          <td>{{ datas.home_team }} vs {{ datas.away_team }}</td>
+                          <td>{{ datas.competition_cluster }}</td>
+                          <!--#############3 Odds ##########3-->
+                          
+                          <td>{{ datas.odds.1 }}</td>
+                         
+                        </tr>
+                      {% endfor %}
+                    {% else %}
+                        <h5>No data</h5>
+                    {% endif %}
+                    
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div><!-- end of .container-->
+  </section><!-- <section> close ============================-->
+  <!-- ============================================-->
+
+  
+  <section class="py-8" id="testimonial" style="background-image:url('{% static 'assets/img/illustrations/how-it-works.png' %}');background-position:center bottom;background-size:cover;">
+    <div class="container-lg">
+      <div class="row flex-center">
+        <div class="col-12 col-lg-10 col-xl-12">
+          
+          <!--/.bg-holder-->
+          <h6 class="fs-3 fs-lg-4 fw-bold lh-sm" style="color: #fff;"> highlights</h6>
+        </div>
+        <br />
+        <div class="carousel slide pt-3" id="carouselExampleDark" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="10000">
+              <div class="row h-100 mx-3 mx-sm-5 mx-md-4 my-md-7 m-lg-7 mt-7">
+                <div class="col-md-4 mb-5 mb-md-0">
+                  <div class="card h-100 shadow">
+                    <div class="card-body my-3">
+                      <div class="align-items-xl-center d-block d-xl-flex px-3"><img class="img-fluid me-3 me-md-2 me-lg-3" src="{% static 'assets/img/gallery/user-1.png' %}" width="50" alt="" />
+                        <div class="flex-1 align-items-center pt-2">
+                          <h5 class="mb-0 fw-bold text-success">Fernando Soler</h5>
+                          <p class="fw-normal text-black">Telecommunication Engineer</p>
+                        </div>
+                      </div>
+                      <p class="mb-0 px-3 px-md-2 px-xxl-3">&quot;Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4 mb-5 mb-md-0">
+                  <div class="card h-100 shadow">
+                    <div class="card-body my-3">
+                      <div class="align-items-xl-center d-block d-xl-flex px-3"><img class="img-fluid me-3 me-md-2 me-lg-3" src="{% static 'assets/img/gallery/user-1.png' %}" width="50" alt="" />
+                        <div class="flex-1 align-items-center pt-2">
+                          <h5 class="mb-0 fw-bold text-success">Ilone Pickford</h5>
+                          <p class="fw-normal text-black">Head of Agrogofund </p>
+                        </div>
+                      </div>
+                      <p class="mb-0 px-3 px-md-2 px-xxl-3">&quot;</p>
+                      <div style='width:100%;height:0px;position:relative;padding-bottom:56.250%;'><iframe src='https://www.scorebat.com/embed/v/60e8677c9cbae/?utm_source=api&utm_medium=video&utm_campaign=dflt' frameborder='0' width='100%' height='100%' allowfullscreen allow='autoplay; fullscreen' style='width:100%;height:100%;position:absolute;left:0px;top:0px;overflow:hidden;'></iframe></div>
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+            
+          </div>
+          <div class="row px-3 px-sm-6 px-md-0 px-lg-5 px-xl-4">
+            <div class="col-12 position-relative"><a class="carousel-control-prev carousel-icon z-index-2" href="#carouselExampleDark" role="button" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Previous</span></a><a class="carousel-control-next carousel-icon z-index-2" href="#carouselExampleDark" role="button" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Next</span></a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <section class="py-5" id="invest">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-xl-9 mb-3">
+          <div class="row">
+            <div class="col-lg-12 mb-3">
+              <h5 class="fw-bold fs-3 fs-lg-5 lh-sm mb-3">Recent results  </h5>
+              
+            </div>
+            <div class="col-md-12 mb-5">
+              <div class="table-responsive">
+                <table class="table">
+                  <style>
+                    tr th{
+                      background: #66BB6A !important;
+                      color: #fff;
+                      
+                    }
+                  </style>
+                  <thead>
+                    <tr>
+                      <th scope="col">Event</th>
+                      <th scope="col">1</th>
+                      <th scope="col">X</th>
+                      <th scope="col">2</th>
+                      <th scope="col">Score</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% if data %}
+                      {% for datas in data %}
+                        <tr>
+                          <td>{{ datas.home_team }} vs {{ datas.away_team }}</td>
+                          <td>{{ datas.competition_cluster }}</td>
+                          <!--#############3 Odds ##########3-->
+                          
+                          <td>{{ datas.odds.1 }}</td>
+                         
+                        </tr>
+                      {% endfor %}
+                    {% else %}
+                        <h5>No data</h5>
+                    {% endif %}
+                    
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div><!-- end of .container-->
+  </section>
+
+  <!-- ============================================-->
+  <!-- <section> begin ============================-->
+  <section class="z-index-1 cta">
+    <div class="container">
+      <div class="row flex-center">
+        <div class="col-12">
+          <div class="card shadow h-100 py-5">
+            <div class="card-body text-center">
+              <h1 class="fw-semi-bold mb-4">Over   &nbsp;<span class="text-success">68</span> &nbsp; Football Leagues</h1><a class="btn btn-lg btn-success px-6" href="#" role="button">Login</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- end of .container-->
+  </section><!-- <section> close ============================-->
+  <!-- ============================================-->
+
+
+
+  
+
+  {% include 'partials/footer.html' %}
+</main><!-- ===============================================-->
+<!--    End of Main Content-->
+<!-- ===============================================-->
+
+
+
+<!-- ===============================================-->
+<!--    JavaScripts-->
+<!-- ===============================================-->
+<script src="{% static 'vendors/@popperjs/popper.min.js' %}"></script>
+<script src="{% static 'vendors/bootstrap/bootstrap.min.js' %}"></script>
+<script src="{% static 'vendors/is/is.min.js' %}"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
+<script src="{% static 'assets/js/theme.js' %}"></script>
+<link href="https://fonts.googleapis.com/css2?family=Chivo:wght@300;400;700;900&amp;display=swap" rel="stylesheet">
+
+{% endblock content %}
